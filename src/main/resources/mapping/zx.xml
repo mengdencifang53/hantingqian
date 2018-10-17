@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.accp.dao.zx.IUserDao">
+    <select id="queryUser" resultType="login">
+    select*from login where userEmail=#{us.useremail} and userPwd=#{us.userpwd}
+    
+    </select>
+    
+    <select id="queryEmail" resultType="login">
+    select* from login where userEmail=#{email}
+    
+    </select>
+    
+    <insert id="addUser">
+    insert into login(userEmail,userPwd)values(#{us.useremail},#{us.userpwd});
+    
+  
+    </insert>
+    <select id="queryUserId" resultType="com.accp.vo.zx.InfoVo">
+    select*from user where userID=#{id.userid}
+    
+    </select>
+    
+    
+    </mapper>
